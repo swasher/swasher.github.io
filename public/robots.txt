@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://swasher.github.io/sitemap.xml
