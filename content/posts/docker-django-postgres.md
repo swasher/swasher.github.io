@@ -1,9 +1,10 @@
+---
 Title: Docker-django-postgres
 Date: 2022-07-14 10:06
 Category: IT
 Tags: docker, django, postgres
 Author: Swasher
-
+---
 
 Создаем файл `docker-compose.yml`
 
@@ -71,3 +72,4 @@ For filly recreate db:
 	python manage.py migrate --run-syncdb
 	python manage.py loaddata manager
 	python manage.py createsuperuser --username=swasher --email=mr.swasher@gmail.com;
+
