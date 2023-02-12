@@ -1,12 +1,12 @@
 ---
 Title: Docker-django-postgres
 Date: 2022-07-14 10:06
-Category: IT
-Tags: docker, django, postgres
+Category: [IT]
+Tags: [docker, django, postgres]
 Author: Swasher
 ---
 
-Создаем файл `docker-compose.yml`
+РЎРѕР·РґР°РµРј С„Р°Р№Р» `docker-compose.yml`
 
 version: "3.9"
 
@@ -32,7 +32,7 @@ DATABASE_PASSWORD=postgres # for docker, you can leave this
 DATABASE_HOST=localhost    # for docker, you can leave this
 
 
-settings.py пишем параметры коннекта, в том числе для хероку
+settings.py РїРёС€РµРј РїР°СЂР°РјРµС‚СЂС‹ РєРѕРЅРЅРµРєС‚Р°, РІ С‚РѕРј С‡РёСЃР»Рµ РґР»СЏ С…РµСЂРѕРєСѓ
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
