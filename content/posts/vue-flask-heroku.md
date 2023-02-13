@@ -1,8 +1,8 @@
 ---
 Title: Создание темплейта Flask-Vue.js-Heroku
-Date: 2019-05-05 08:12
+Date: 2019-05-05T08:12:41+02:00
 Tags: [vue, flask, heroku]
-Category: [IT, aaa]
+Categories: [IT]
 Author: Swasher
 ---
 

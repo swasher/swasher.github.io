@@ -1,7 +1,7 @@
 ---
 Title: Docker-django-postgres
-Date: 2022-07-14 10:06
-Category: [IT]
+Date: 2022-07-14T10:06:41+02:00
+Categories: [IT]
 Tags: [docker, django, postgres]
 Author: Swasher
 ---

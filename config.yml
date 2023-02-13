@@ -2,7 +2,7 @@ baseURL: "https://swasher.github.io/"
 languageCode: ru-RU
 title: Antiskleroz
 
-paginate: 5
+paginate: 15
 theme: PaperMod
 
 enableRobotsTXT: true
@@ -22,10 +22,12 @@ outputs:
     - RSS
     - JSON # is necessary
 
-#taxonomies:
+taxonomies:
 #  author: "authors"
-#  tag: "tags"
-#  category: "categories"
+  tag: "tags"
+  category: "categories"
+
+disqusShortname: swasher
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -40,12 +42,12 @@ params:
   disableThemeToggle: false
 
   ShowReadingTime: false
-  ShowShareButtons: false
+  ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   disableSpecial1stPost: true
   disableScrollToTop: false
-  comments: false
+  comments: true
   hidemeta: false
   hideSummary: true
   showtoc: true
@@ -85,13 +87,14 @@ params:
 #    Title: "Hi there \U0001F44B"
 #    Content: Welcome to my blog
 
-#  socialIcons:
+  socialIcons:
+    - name: stackoverflow
+      url: "https://stackoverflow.com/users/1334825/swasher"
+    - name: github
+      url: "https://github.com/swasher"
 #    - name: twitter
 #      url: "https://twitter.com/"
-#    - name: stackoverflow
-#      url: "https://stackoverflow.com"
-#    - name: github
-#      url: "https://github.com/"
+
 
   analytics:
     google:
@@ -107,7 +110,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/swasher/swasher.github.io/blob/master/content/posts"
+    URL: "https://github.com/swasher/swasher.github.io/blob/master/content"
     Text: "Edit" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -136,6 +139,7 @@ menu:
       name: search
       url: /search/
       weight: 30
+
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 # markup:

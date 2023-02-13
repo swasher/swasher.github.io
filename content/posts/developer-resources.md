@@ -1,8 +1,8 @@
 ---
 Title: Инструменты и ресурсы для разработчика
-Date: 2016-03-13 20:02
-tags:  [web]
-Category: [IT]
+Date: 2016-03-13T20:02:41+02:00
+Tags:  [web]
+Categories: [IT]
 Author: Swasher
 ---
 

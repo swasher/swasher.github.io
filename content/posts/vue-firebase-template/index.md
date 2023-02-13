@@ -1,8 +1,8 @@
 ---
 Title: Vue Firebase Quick Start
-Date: 2016-03-13 20:02
+Date: 2023-02-12T20:02:41+02:00
 tags:  [web,vue,firebase]
-Category: [IT]
+Categories: [IT]
 Author: Swasher
 ---
 
