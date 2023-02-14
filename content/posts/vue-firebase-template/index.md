@@ -105,11 +105,12 @@ What is the name of the GitHub branch associated with your site's live channel? 
       master
 
 После этого в нашем проекте появятся следующие файлы:
-.firebaserc
-firebase.json
-public/index.html
-.github/workflows/firebase-hosting-merge.yml
-.github/workflows/firebase-hosting-pull-request.yml
+
+    .firebaserc
+    firebase.json
+    public/index.html
+    .github/workflows/firebase-hosting-merge.yml
+    .github/workflows/firebase-hosting-pull-request.yml
 
 Дальше нужно добавить `site ID` в firebase.json (строчка `"site": "kinozal",`):
 
@@ -133,6 +134,10 @@ public/index.html
     firebase deploy --only hosting:kinozal
 
 Теперь по адресу `https://kinozal.web.app/` должна открыться заглушка Vue.
+
+> Внимание! В дальшейшем для упешного деплоя наше приложения должно видеть переменные окружения,
+> которые у нас во время разработки в файле .env.development. Для этого нужно создать файл .env с аналогичным 
+> содержимым
 
 Возвращаемся в консоль firebase и завершаем мастер настрйки.
 
@@ -158,19 +163,113 @@ public/index.html
 ![img_5.png](img_5.png)
 ![img_6.png](img_6.png)
 
-### Настройка минимального проекта VueJS
 
-Создаем src/firebase.js - здесь мы создаем объекты подлючения к firebase и импортируем их в других частях
+### Firestore Rules
 
-    const firebaseConfig  = {
-      apiKey: import.meta.env.VITE_APP_apiKey,
-      authDomain: import.meta.env.VITE_APP_authDomain,
-      databaseURL: import.meta.env.VITE_APP_databaseURL,
-      projectId: import.meta.env.VITE_APP_projectId,
-      storageBucket: import.meta.env.VITE_APP_storageBucket,
-      messagingSenderId: import.meta.env.VITE_APP_messagingSenderId,
-      appId: import.meta.env.VITE_APP_appId
+Firestore Rules определяют права для записи в базу данных. Для этого примера мы их отключим.
+
+> Внимание! Сейчас *любой* человек может писать в нашу базу!
+
+Сделаем, как положено, когда перейдем к аутентификации.
+
+Идем в консоли Firestore database --> Rules и меняем false на true:
+
+    rules_version = '2';
+    service cloud.firestore {
+        match /databases/{database}/documents {
+            match /{document=**} {
+                allow read, write: if true;
+            }
+        }
     }
 
-Очищаем проект от начальных файлов - удаляем все в src/components, src/assets, и содержимое App.vue.
+### Test Firestore data
+
+Созадем новую тестовую коллекцию, пусть это будут, например, фильмы, и несклько записей: 
+
+![img_7.png](img_7.png)
+    
+### Настройка проекта VueJS
+
+Очищаем проект от начальных файлов - удаляем все в src/components, src/assets, и содержимое App.vue. Все создаем с нуля.
+Костяк проекта состоит из следующих файлов:
+
+    project/
+    ├─ .env
+    ├─ src/
+    │  ├─ App.vue
+    │  ├─ firebase.js
+    │  ├─ main.js
+
+### main.js
+
+Точка запуска приложения. Импортируем нащ единственный компонент (APP) и встраиваем его в `#app` в `index.html`
+
+    import { createApp } from 'vue'
+    import App from './App.vue'
+    
+    createApp(App).mount('#app')
+
+
+#### firebase.js
+
+Создаем `src/firebase.js` - здесь мы создаем объекты подлючения к firebase и импортируем их в других частях кода.
+
+    import { initializeApp } from "firebase/app";
+    import { getAuth } from 'firebase/auth'
+    
+    const firebaseConfig  = {
+        apiKey: import.meta.env.VITE_APP_apiKey,
+        authDomain: import.meta.env.VITE_APP_authDomain,
+        databaseURL: import.meta.env.VITE_APP_databaseURL,
+        projectId: import.meta.env.VITE_APP_projectId,
+        storageBucket: import.meta.env.VITE_APP_storageBucket,
+        messagingSenderId: import.meta.env.VITE_APP_messagingSenderId,
+        appId: import.meta.env.VITE_APP_appId
+    }
+    
+    // Initialize Firebase
+    const connection = initializeApp(firebaseConfig);
+    
+    export { connection }
+
+#### App.vue
+
+Темплейт и логика. Чтобы html было немного красивее, в `index.html` подключил 
+`<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">`.
+В дальнейшем его уберем и подключим полноценный фреймворк.
+
+    <template>
+        <h4>Get data from firestore</h4>
+        <button type="button" class="btn btn-primary" @click="getMovies">Get Data</button>
+    
+        <table>
+            <tr v-for="(movie, key) in movies">
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.year }}</td>
+            </tr>
+        </table>
+    </template>
+    
+    
+    <script setup>
+        import {ref} from 'vue'
+        import { getFirestore, collection, getDocs } from 'firebase/firestore'
+        import {connection} from './firebase.js'
+        
+        const db = getFirestore(connection);
+        const movies = ref([])
+        
+        async function getMovies() {
+            const moviesCol = collection(db, 'movie');
+            const moviesSnapshot = await getDocs(moviesCol);
+            movies.value = moviesSnapshot.docs.map(doc => doc.data());
+        }
+    </script>
+
+Если все сделано правильно, мы должны увидеть данные от firebase:
+
+![img_8.png](img_8.png)
+
+
 
