@@ -1,0 +1,2 @@
+{{ $image := (.Page.Resources.GetMatch .Destination) }}
+<img src="{{ $image.RelPermalink | safeURL }}" style="width: 250px" />

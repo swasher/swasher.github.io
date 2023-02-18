@@ -7,11 +7,32 @@ Categories: [IT, Repro]
 
 # MD EXAMPLES
 
-![alt](aaa.jpg "This is the title attribute {width='100' height='75' style='border: 1px solid red;`}")
+![alt](aaa.jpg "{width='100px' height='75' style='border: 3px solid red;'}") 
 
-### Section A
+render must be `style="border: 3px solid red;"`
 
-ewferferf
+```
+![alternate text](/path-to-image.img "This is the title")
+   --------------  ------------------  -----------------
+      .Text          .Destination          .Title
+```
+
+
+
+### Highlighting
+
+```bash
+$ sudo apt-get install npm
+$ sudo npm intall -g bower
+```
+
+```bash {linenos=table,hl_lines=[1],linenostart=199}
+$ sudo apt-get install npm
+$ sudo npm intall -g bower
+```
+
+Подглючивает нумерация строк - очень узкая колонка.
+Можно выделять строки цветом, а так же указывать начальный номер. 
 
 ### Картинки
 
