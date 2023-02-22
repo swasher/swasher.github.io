@@ -87,3 +87,12 @@ Pycharm][]
 
   [PEP8’s documentation]: http://pep8.readthedocs.org/en/latest/intro.html
   [документации Pycharm]: http://www.jetbrains.com/pycharm/webhelp/creating-and-editing-file-templates.html
+
+### Балее контрастный скроллбар
+
+Некоторые файлы, например html, так раскрашивают скроллбар, что на нем не видно ползунка. Эта настройка
+делаем его более контрастным, как бы "поднимая" его над цветной линейкой.
+
+In the Settings/Preferences dialog Ctrl+Alt+S, go to Appearance and Behavior | Appearance.
+
+From the options on the right, under Accessibility section, select Use contrast scrollbars.

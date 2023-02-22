@@ -49,18 +49,48 @@
 Самый крупный - делаем по центру с линиями по бокам.
 
 Дизайн:
-1 - по центру, с линией по бокам.
-2
-3
-4
-5
+1 - Заголовок статьи.
+2 - Заголовкок большого раздела, если очень большая статья.
+3 - 3 диеза. Стандартный заголовок.
+4 - 4 диеза. Подзаголовок (маленького раздельчика)
+5 - думаю не использовать
 */
 
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+
+h1{
+    color: #ff6f3c ;
+}
+
+h2 {
+    /*margin-top:500px;*/
+    color: #ff6f3c;
+    display:flex;
+    font-family: 'PT Serif', serif;
+}
+h2:before, h2:after {
+    color: #ff6f3c;
+    content:'';
+    flex:1;
+    border-bottom:solid 1px;
+    margin: auto 0.25rem;
+    box-shadow: 0 -1px ;
+}
+
 h3 {
-    color: #78bb65;
+    color: #ff9a3c;
+    font-weight: 700;
+
 }
 
 h4 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    color: #ff9a3c;
+    background-color: #24262a;
+    padding: 3px;
+}
+
+h5 {
 }

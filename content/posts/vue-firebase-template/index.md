@@ -6,19 +6,19 @@ Categories: [IT]
 Author: Swasher
 ---
 
-#### Создаем проект Vue ([doc's link](https://vuejs.org/guide/quick-start.html#creating-a-vue-application))
+### Создаем проект Vue ([doc's link](https://vuejs.org/guide/quick-start.html#creating-a-vue-application))
 
     npm init vue@latest  # let all by default
     cd <your-project-name>
     npm install
     npm run dev
 
-#### Github
+### Github
 
 В этот момент нужно сделать репозиторий и залит туда проект. Во время настройки деплоя на firebase он уже должен
 существовать.
 
-#### Создаем проект Firebase
+### Создаем проект Firebase
 
 - идем в [консоль firebase](https://console.firebase.google.com/) и жмем `New Project`
 
@@ -28,8 +28,9 @@ Author: Swasher
 
 ![](step2.png)
 
-- Мы создали "базу данных". Ей могут пользоваться разные приложение, на разных фреймворках. Добавляем
-  в проект веб-приложение
+- Мы создали "Проект". В "проекте" могут быть различные базы данных (Коллекции), настроен хостинг, к хранящимся данным подключены разные
+  приложение на разных платформах (Web, Androidm и т.д). Т.е. это контейнер самого высокого уровня.
+- Мы добавляем в проект веб-приложение:
 
 ![](step3.png)
 
@@ -211,7 +212,7 @@ Firestore Rules определяют права для записи в базу 
     createApp(App).mount('#app')
 
 
-#### firebase.js
+### firebase.js
 
 Создаем `src/firebase.js` - здесь мы создаем объекты подлючения к firebase и импортируем их в других частях кода.
 
@@ -233,39 +234,83 @@ Firestore Rules определяют права для записи в базу 
     
     export { connection }
 
-#### App.vue
+### App.vue
 
 Темплейт и логика. Чтобы html было немного красивее, в `index.html` подключил 
 `<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">`.
 В дальнейшем его уберем и подключим полноценный фреймворк.
 
-    <template>
-        <h4>Get data from firestore</h4>
-        <button type="button" class="btn btn-primary" @click="getMovies">Get Data</button>
+#### User registration
+
+Для регистрации нового пользователя добавим форму с кнопкой и хандлер на эту кнопку. Успешность операции наблюдаем в
+консоли Chrome.
+
+```vue
+<template>
+    <section>
+        <h4>Create an Account</h4>
+        <p><input type="text" placeholder="Email" v-model="email" /></p>
+        <p><input type="password" placeholder="Password" v-model="password" /></p>
+        <p><button @click="register">Submit</button></p>
+    </section>
+</template>
+
+<script>
+const email = ref('')
+const password = ref('')
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+const auth = getAuth();
+const register = () => {
+    createUserWithEmailAndPassword(auth, email.value, password.value)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            console.log('Successfully registered!');
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(error.message, ' ### Error code:', error.code, )
+        });
+}
+</script>
+```
+
+#### User login
+
+todo
+
+#### Read data
+
+```vue
+<template>
+    <h4>Get data from firestore</h4>
+    <button type="button" class="btn btn-primary" @click="getMovies">Get Data</button>
+
+    <table>
+        <tr v-for="(movie, key) in movies">
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.year }}</td>
+        </tr>
+    </table>
+</template>
+
+
+<script setup>
+    import {ref} from 'vue'
+    import { getFirestore, collection, getDocs } from 'firebase/firestore'
+    import {connection} from './firebase.js'
     
-        <table>
-            <tr v-for="(movie, key) in movies">
-                <td>{{ movie.title }}</td>
-                <td>{{ movie.year }}</td>
-            </tr>
-        </table>
-    </template>
+    const db = getFirestore(connection);
+    const movies = ref([])
     
-    
-    <script setup>
-        import {ref} from 'vue'
-        import { getFirestore, collection, getDocs } from 'firebase/firestore'
-        import {connection} from './firebase.js'
-        
-        const db = getFirestore(connection);
-        const movies = ref([])
-        
-        async function getMovies() {
-            const moviesCol = collection(db, 'movie');
-            const moviesSnapshot = await getDocs(moviesCol);
-            movies.value = moviesSnapshot.docs.map(doc => doc.data());
-        }
-    </script>
+    async function getMovies() {
+        const moviesCol = collection(db, 'movie');
+        const moviesSnapshot = await getDocs(moviesCol);
+        movies.value = moviesSnapshot.docs.map(doc => doc.data());
+    }
+</script>
+```
 
 Если все сделано правильно, мы должны увидеть данные от firebase:
 

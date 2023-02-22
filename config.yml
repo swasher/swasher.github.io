@@ -61,6 +61,7 @@ params:
     favicon32x32: "images/favicon-32x32.png"
     apple_touch_icon: "images/apple-touch-icon.png"
     safari_pinned_tab: "<link / abs url>"
+    disableHLJS: true
 
   label:
     text: "Antiskleroz"
