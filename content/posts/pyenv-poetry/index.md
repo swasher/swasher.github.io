@@ -46,29 +46,30 @@ Python 3.10.2
 
 
 
-```shell
+`shell
 C:\Users\OLEKSII\testproject>poetry init
 INFO: Could not find files for the given pattern(s).
 This command will guide you through creating your pyproject.toml config.
 Package name [testproject]:
 Version [0.1.0]:
-Description []:                                                                         
+Description []:
 Author [None, n to skip]:  n                                                            
 License []:                                                                             
 Compatible Python versions [^3.11]:  3.5.2  <<<<==== INSERT OUR ACTUAL VERSION
-                                                                                                                                      
+
 Would you like to define your main dependencies interactively? (yes/no) [yes] no
 Would you like to define your development dependencies interactively? (yes/no) [yes] no 
-Generated file                                                                                                                                                                  
+
+Generated file
 [tool.poetry]
 name = "testproject"
 version = "0.1.0"
-description = ""                                                                        
+description = ""
 authors = ["Your Name <you@example.com>"]                                               
-readme = "README.md"                                                                                                                                                          
+readme = "README.md"
 
-[tool.poetry.dependencies]                                                              
-python = "3.5.2"                                                                                                                                                                
+[tool.poetry.dependencies]
+python = "3.5.2"
 
 
 
