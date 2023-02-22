@@ -31,6 +31,15 @@ $ sudo apt-get install npm
 $ sudo npm intall -g bower
 ```
 
+Adding titles:
+
+{{< path "/src/lib/util.js" >}}
+```javascript
+function addOne(number) {
+    return number + 1;
+}
+```
+
 Подглючивает нумерация строк - очень узкая колонка.
 Можно выделять строки цветом, а так же указывать начальный номер. 
 
