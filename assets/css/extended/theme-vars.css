@@ -58,25 +58,28 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,600&display=swap');
+
+
 
 h1{
     color: #ff6f3c ;
 }
 
-h2 {
+.post-content h2 {
     /*margin-top:500px;*/
     color: #ff6f3c;
     display:flex;
-    font-family: 'PT Serif', serif;
+    font-family: 'Vollkorn', serif;
 }
-h2:before, h2:after {
+/*h2:before, h2:after {
     color: #ff6f3c;
     content:'';
     flex:1;
     border-bottom:solid 1px;
     margin: auto 0.25rem;
     box-shadow: 0 -1px ;
-}
+}*/
 
 h3 {
     color: #ff9a3c;

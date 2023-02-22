@@ -1,6 +1,6 @@
 ---
-Title: Pycharm: настройка и ньюансы работы
-Date: 2014-07-06T21:00:00
+Title: Jetbrains notes
+Date: 2014-07-06T21:00:00+02:00
 Category: [IT]
 Tags: [pycharm]
 Author: [Swasher]
@@ -29,36 +29,36 @@ Pycharm умеет отображать нарушения стилистики 
 ищем язык Python, в выпадаеющем меню - PEP8 coding style violation. Дальше идем на страницу [PEP8’s documentation][], 
 и ищем код ошибки. Жмем плюсик, и вставляем код:
 
-{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457788278/pycharm/1.png 500 %}
+![](http://res.cloudinary.com/swasher/image/upload/v1457788278/pycharm/1.png)
 
 
 ### Сохранение файлов с unix-like окончанием строк
 
 Действует только для файлов, созданных после установки этой опции
 
-{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457788278/pycharm/2.png 500 %}
+![](http://res.cloudinary.com/swasher/image/upload/v1457788278/pycharm/2.png)
 
 ### Заключение выделенного текста в качвычки
 
 Очень удобно заключать выделенный текст в кавычки или скобки нажатием одной кнопки. Работает для 
 любых скобок или кавычек. Для этого включаем следующую опцию
 
-{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457788278/pycharm/3.png 500 %}
+![](http://res.cloudinary.com/swasher/image/upload/v1457788278/pycharm/3.png)
 
 ### Создание темплейтов для новых файлов
 
 Я использую темплейт для новых записей в блоге. Темплейты могут содержать переменные. Подробнее в [документации
 Pycharm][]
 
-{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457788278/pycharm/4.png 500 %}
+![](http://res.cloudinary.com/swasher/image/upload/v1457788278/pycharm/4.png)
 
 ### Подсветка синтаксиса Ruby
 
 Для базовой подсветки синтаксиса Ruby можно воспользоваться плагином [TextMate bundles support](https://github.com/textmate/ruby.tmbundle). 
 Сначала его нужно склонировать склонировать куда-нибудь в /user/documents, и затем подключить
-в Settings -> Editor -> TextMate Bundles
+в `Settings` -> `Editor` -> `TextMate Bundles`
 
-{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1434196868/pycharm/ruby_syntax.png %}
+![](http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1434196868/pycharm/ruby_syntax.png)
 
 Там же нужно установить желаемую цветовую схему для плагина.
 
@@ -68,7 +68,7 @@ Pycharm][]
 строки составляет 80 символов. Pycharm умеет делать автоматический перенос на новую строку при достижении этого
 ограничения. Однако, это не всегда удобно и необходимо, и отключить эту фичу можно в настройках:
 
-{% img image http://res.cloudinary.com/swasher/image/upload/c_crop,w_760/v1457613925/pycharm/pycharm_right_margin.png %}
+![](http://res.cloudinary.com/swasher/image/upload/c_crop,w_760/v1457613925/pycharm/pycharm_right_margin.png)
 
 ### gracefully restart for uwsgi server
 
@@ -93,6 +93,6 @@ Pycharm][]
 Некоторые файлы, например html, так раскрашивают скроллбар, что на нем не видно ползунка. Эта настройка
 делаем его более контрастным, как бы "поднимая" его над цветной линейкой.
 
-In the Settings/Preferences dialog Ctrl+Alt+S, go to Appearance and Behavior | Appearance.
-
-From the options on the right, under Accessibility section, select Use contrast scrollbars.
+>In the Settings/Preferences dialog Ctrl+Alt+S, go to Appearance and Behavior | Appearance.
+>
+>From the options on the right, under Accessibility section, select Use contrast scrollbars.

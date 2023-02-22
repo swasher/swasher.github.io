@@ -33,7 +33,6 @@ $ sudo npm intall -g bower
 
 Adding titles:
 
-{{< path "/src/lib/util.js" >}}
 ```javascript
 function addOne(number) {
     return number + 1;
