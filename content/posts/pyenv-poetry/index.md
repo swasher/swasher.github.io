@@ -46,15 +46,15 @@ Python 3.10.2
 
 
 
-`shell
+```shell
 C:\Users\OLEKSII\testproject>poetry init
 INFO: Could not find files for the given pattern(s).
 This command will guide you through creating your pyproject.toml config.
 Package name [testproject]:
 Version [0.1.0]:
 Description []:
-Author [None, n to skip]:  n                                                            
-License []:                                                                             
+Author [None, n to skip]:  n
+License []:
 Compatible Python versions [^3.11]:  3.5.2  <<<<==== INSERT OUR ACTUAL VERSION
 
 Would you like to define your main dependencies interactively? (yes/no) [yes] no
@@ -71,14 +71,11 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "3.5.2"
 
-
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 Do you confirm generation? (yes/no) [yes]
-                                               
 ```
 
 Теперь обновите env у poetry, указав pyenv — это очень важный шаг. Когда вы установили poetry, она установила python 3.10.5 в качестве системного python, поэтому вам нужно переопределить это, указав правильную env для poetry с помощью `poetry env use $(pyenv which python)`. Вам нужно сделать это только один раз.
