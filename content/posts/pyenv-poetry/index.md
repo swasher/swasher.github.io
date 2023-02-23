@@ -129,3 +129,35 @@ OR
 poetry install <package-name>
 ```
 
+Cheat sheet pyenv for Windows
+--------------------
+
+List all python version available for install
+
+    pyenv install -l | findstr 3.8
+
+Setup python version for current directory (create .python-version)
+
+    pyenv local 3.8.2
+
+
+Cheat sheet poetry
+--------------------
+
+Setup poetry in current directory (create `pyproject.toml` config, but not create virtual env yet)
+
+    poetry init
+
+Install all from `pyproject.toml`
+
+    poetry install
+
+Change executable python for current environment (work with pyenv). This command create virt. environment directory.
+
+    poetry env use $(pyenv which python)
+
+If add package manually in `pyproject.toml`
+
+    poetry lock  # update lock file from pyproject.toml
+    poetry install
+
