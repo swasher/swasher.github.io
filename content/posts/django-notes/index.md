@@ -6,6 +6,12 @@ Tags: [pycharm, django]
 Author: [Swasher]
 ---
 
+### Django architecture articles
+
+- [Against service layers in Django, two parts](https://www.b-list.org/weblog/2020/mar/16/no-service/)
+- [Corporative Django Styleguide](https://github.com/HackSoftware/Django-Styleguide?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_14)
+- [Django models, encapsulation and data integrity](https://www.dabapps.com/insights/django-models-and-encapsulation/)
+- [Cosmic Python Book](https://www.cosmicpython.com/)
 
 ### Как сделать выделение активных пунктов меню
 
