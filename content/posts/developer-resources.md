@@ -24,6 +24,10 @@ Author: Swasher
 
 - [mega.nz](http://mega.nz) - хранение файлов без синхронизации, с шифрованием на стороне клиента. Free - 50GB
 
+- [Sync](https://www.sync.com/) - удобный синхронизатор типа Dropbox.
+
+- [Terabox](https://www.terabox.com/) - Free 1 TB. Много рекламы.
+
 Репозитории исходных кодов
 -----------------------
 
@@ -79,20 +83,20 @@ IDE и редакторы
 СУБД
 ----------------------
 
-[mongotron.io](http://mongotron.io/) - Cross platform MongoDB management. Open Source, built using Electron and Angular JS
+- [mongotron.io](http://mongotron.io/) - Cross platform MongoDB management. Open Source, built using Electron and Angular JS
 
-[Fauna](https://fauna.com/pricing) - Document oriented DB with free plan
+- [Fauna](https://fauna.com/pricing) - Document oriented DB with free plan
 
-[Planetscale](https://planetscale.com/) - PlanetScale is the world’s most advanced serverless MySQL platform
+- [Planetscale](https://planetscale.com/) - PlanetScale is the world’s most advanced serverless MySQL platform
 
-[Supabase](https://supabase.com/database) - open source Firebase alternative. Free plan.
+- [Supabase](https://supabase.com/database) - open source Firebase alternative. Free plan.
 
-[Neon](https://neon.tech/) - Serverless Postgres. Free plan.
+- [Neon](https://neon.tech/) - Serverless Postgres. Free plan.
 
 Online Credentials Store
 -------------------------
 
-[Doppler](https://www.doppler.com/) - Doppler is the uncomplicated way to sync, manage, orchestrate, and rotate secrets across any environment or app config with easy to use tools.
+- [Doppler](https://www.doppler.com/) - Doppler is the uncomplicated way to sync, manage, orchestrate, and rotate secrets across any environment or app config with easy to use tools.
 
 Фронтенд
 -----------------------
@@ -148,22 +152,36 @@ Python
 
 - [firebase.com](https://www.firebase.com/) - хостинг с бесплатным планом навсегда. В бесплатном плане нет custom domains
 
-- [bitballoon.com](https://www.bitballoon.com/) - хостинг с бесплатным планом на их субдомене
-
 - [online.net](https://www.online.net/en/dedicated-cloud) - VPS за три евро
 
 - [ovh.com](https://www.ovh.com/us/vps/vps-ssd.xml) - VPS 3.5 евро (OpenStack KVM, 1 vCore, 2.4 GHz, 2 GB RAM, 10 GB SSD, Local RAID 10)
 
-- [digitalocean.com](https://digitalocean.com) - один из самых уважаемых хостеров. VPS за 5 долл (512 MB RAM, 1 CoreProcessor, 20GBSSD Disk, 1TBTransfer)
+- [digitalocean.com](https://digitalocean.com) - VPS за 5 долл (512 MB RAM, 1 CoreProcessor, 20GBSSD Disk, 1TBTransfer)
 
 - [serverbear.com](http://serverbear.com/) - сводная информация по всем vps
 
 PaaS
 ----------------------
 
-- [heroku](https://www.heroku.com/) - Heroku одно из немногих мест, где действительно бесплатно и качественно можно развернуть django-приложение.
-
 - [paasify.it](http://www.paasify.it/) - подбор Paas по параметрам
+
+- [Fly.io](https://fly.io/) - один из самых популярных, есть Free tier
+
+- [heroku](https://www.heroku.com/) - Стало платно
+
+- [Deta](https://deta.space/) - только проприетарная NoSQL база; вроде FREE
+
+- [Render](https://render.com/)  - Есть Free tier, но postgres только 90 дней, дальше дорого.
+
+- [Railway](https://railway.app/) - отменили Free план (5$/mo)
+
+Self-hosting PAAS
+-------------------------
+
+- [easypanel.io](https://easypanel.io/)
+- [caprover.com](https://caprover.com/)
+- [dokku.com](https://dokku.com/)
+- [coolify.io](https://coolify.io/)
 
 Домены
 -----------------------
