@@ -4,7 +4,7 @@ dummy:
 serve:
 	hugo serve -D
 
-push:
+deploy:
 	git commit -am "commit"
 	git push origin master
 

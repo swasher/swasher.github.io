@@ -345,3 +345,35 @@ http://stackoverflow.com/a/10483096/1334825
         cp36-cp36m-win_amd64
         cp36-abi3-win_amd64
         cp36-none-win_amd64
+
+#### Вывод имен констант классов вместо их значений
+
+```python
+class PrintSheet(models.Model):
+    SINGLESIDE = 0
+    WORK_AND_TURN = 1
+    WORK_AND_THUMBLE = 2
+    PERFECTING = 3
+    SHEETWISE = 4
+
+    TURNOVER = (
+        (SINGLESIDE, 'Без оборота'),
+        (WORK_AND_TURN, 'Свой оборот'),
+        (WORK_AND_THUMBLE, 'Хвост-на-голову'),
+        (PERFECTING, 'Перфектинг'),
+        (SHEETWISE, 'Чужой оборот'),
+    )
+    ...
+    # fileds
+    ...
+
+def class_value_to_string(my_class_num):
+    the_class = PrintSheet
+    try:
+        return (k for k, v in the_class.__dict__.iteritems() if v == my_class_num).next()
+    except:
+        return "UNKNOWN VALUE"
+
+print(class_value_to_string(1,PrintSheet))
+> WORK_AND_TURN
+```

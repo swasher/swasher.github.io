@@ -81,6 +81,19 @@ IDE и редакторы
 
 [mongotron.io](http://mongotron.io/) - Cross platform MongoDB management. Open Source, built using Electron and Angular JS
 
+[Fauna](https://fauna.com/pricing) - Document oriented DB with free plan
+
+[Planetscale](https://planetscale.com/) - PlanetScale is the world’s most advanced serverless MySQL platform
+
+[Supabase](https://supabase.com/database) - open source Firebase alternative. Free plan.
+
+[Neon](https://neon.tech/) - Serverless Postgres. Free plan.
+
+Online Credentials Store
+-------------------------
+
+[Doppler](https://www.doppler.com/) - Doppler is the uncomplicated way to sync, manage, orchestrate, and rotate secrets across any environment or app config with easy to use tools.
+
 Фронтенд
 -----------------------
 
